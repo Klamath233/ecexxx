@@ -80,20 +80,20 @@ SSH onto the Pi and verify the internet is also available on the Pi. The default
 #### Step 1
 Go to `System Preferences` and enter `Sharing`.
 
-![macOS Picture 1](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_1.png)
+![macOS Picture 1](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macos_1.png)
 
 #### Step 2
 Click on `Internet Sharing`. In the right pane, select `Share your connection from Wi-Fi` and `to computers using <your ethernet adapter>`. After that, check the `Internet Sharing` box in the left pane. The window should show a green dot to the left of the message "Internet Sharing: On".
 
-![macOS Picture 2](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_2.png)
-![macOS Picture 3](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_3.png)
+![macOS Picture 2](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macos_2.png)
+![macOS Picture 3](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macos_3.png)
 
 #### Step 3
 We will need to know what IP address has been assigned to the Pi. Open a Terminal and type `arp -a`. The line with `[bridge]` is what you are looking for; the IP address is the IP of the Pi.
 
-![macOS Picture 4](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_4.png)
+![macOS Picture 4](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macos_4.png)
 
 #### Step 4
 It's time to SSH onto the Pi! The default username is `pi` and the password is `raspberry`. Verify that the Pi also has internet connection by pinging Google.
 
-![macOS Picture 5](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_5.png)
+![macOS Picture 5](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macos_5.png)
