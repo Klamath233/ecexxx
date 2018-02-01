@@ -46,5 +46,30 @@ Now you are good to use your favorite SSH client to access your Pi! The default 
 
 ![Win10 Picture 5](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/win10_5.png)
 
+### Ubuntu 16.04
+#### Step 1
+Right click on the WiFi icon at the top-right corner, then click on `Edit Connections...`
 
+![Ubuntu Picture 1](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ubuntu_1.png)
+
+#### Step 2
+In the popped-up window, select the Ethernet interface and hit `Edit`.
+
+![Ubuntu Picture 2](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ubuntu_2.png)
+
+#### Step 3
+The editing interface will show up. Switch to `Ethernet` tab and select your Ethernet device node name to be your `device`. Then switch to `IPv4 Settings` tab and choose `Share to other computers`.
+
+![Ubuntu Picture 3](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ubuntu_3.png)
+![Ubuntu Picture 4](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ubuntu_4.png)
+
+#### Step 4
+Now, the connection is made. Query the Pi's IP by using the `arp` utility inside Terminal. Pi's IP is the one whose `iface` colume has value of your Ethernet device node.
+
+![Ubuntu Picture 5](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ubuntu_5.png)
+
+#### Step 5
+SSH onto the Pi and verify the internet is also available on the Pi. The default username is `pi` and the password is `raspberry`.
+
+![Ubuntu Picture 6](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ubuntu_6.png)
 
