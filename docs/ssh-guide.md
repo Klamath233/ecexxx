@@ -1,5 +1,8 @@
-## Prerequesite
-This tutorial assumes you run Raspbian on your Pi and latest major operating systems, including Windows 10, Ubuntu 16.04 and macOS High Sierra.
+Raspberry Pi SSH and Internet Sharing Guide
+===
+
+## Prerequisite
+This tutorial demonstrates how to connect your computer to your Pi and share the computer's Wi-Fi connection to the Pi via an Ethernet cable. It is assumed that you run Raspbian on your Pi and latest major operating systems, including Windows 10, Ubuntu 16.04 and macOS High Sierra. Also, if you already have a home router, you are good to SSH by simply using the Pi's LAN IP address. This tutorial is useful if you are on campus where it is tricky to connect your Pi directly to the campus Wi-Fi and establish unobstructed SSH connection between the Pi and your computer.
 
 ## Enable SSH on Raspberry Pi
 Before `ssh` onto your Raspberry Pi, you need to enable the SSH server on the Pi. On raspbian, this is as simple as several clicks in a utility called `raspi-config`.
@@ -16,7 +19,7 @@ In order, hit `Interface Options`, `SSH` and `Yes`. You will know SSH has been s
 ![SSH Picture 3](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ssh_3.png)
 ![SSH Picture 4](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ssh_4.png)
 
-## Configurate Internet Sharing
+## Configurate Interconnection and Internet Sharing
 In the following sections, we present methods to configure internet sharing in three operating systems: Windows 10, Ubuntu 16.04 and macOS High Sierra. The basic mechanism is similar. A DHCP service is launched interally and assigns IP addresses to both the host and the Pi, so that the host serves as a internet gateway for the Pi. We assume the host is connected to the internet via Wi-Fi, and to the Pi via Ethernet.
 
 ### Windows 10
@@ -73,3 +76,24 @@ SSH onto the Pi and verify the internet is also available on the Pi. The default
 
 ![Ubuntu Picture 6](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ubuntu_6.png)
 
+### macOS High Sierra
+#### Step 1
+Go to `System Preferences` and enter `Sharing`.
+
+![macOS Picture 1](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_1.png)
+
+#### Step 2
+Click on `Internet Sharing`. In the right pane, select `Share your connection from Wi-Fi` and `to computers using <your ethernet adapter>`. After that, check the `Internet Sharing` box in the left pane. The window should show a green dot to the left of the message "Internet Sharing: On".
+
+![macOS Picture 2](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_2.png)
+![macOS Picture 3](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_3.png)
+
+#### Step 3
+We will need to know what IP address has been assigned to the Pi. Open a Terminal and type `arp -a`. The line with `[bridge]` is what you are looking for; the IP address is the IP of the Pi.
+
+![macOS Picture 4](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_4.png)
+
+#### Step 4
+It's time to SSH onto the Pi! The default username is `pi` and the password is `raspberry`. Verify that the Pi also has internet connection by pinging Google.
+
+![macOS Picture 5](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/macOS_5.png)
