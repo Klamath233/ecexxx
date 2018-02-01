@@ -7,10 +7,12 @@ Before `ssh` onto your Raspberry Pi, you need to enable the SSH server on the Pi
 #### Step 1
 Firstly, you need to have a display (or a serial console) as a bootstrapper for the SSH functionality. Boot into raspbian. When you get the desktop, open terminal and type `sudo raspi-config`. You should be able to see the following interface.
 
-> TODO: a picture
+![SSH Picture 1](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ssh_1.png)
 
 #### Step 2
 In order, hit `Interface Options`, `SSH` and `Yes`. You will know SSH has been successfully enabled when you see the same message as the last picture.
 
-> TODO: remaining pictures
+![SSH Picture 2](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ssh_2.png)
+![SSH Picture 3](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ssh_3.png)
+![SSH Picture 4](https://github.com/Klamath233/ecexxx/raw/master/docs/pics/ssh_4.png)
 
