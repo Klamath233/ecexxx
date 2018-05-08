@@ -54,3 +54,8 @@ for i in range(10):
 hexi.disconnect()
 ```
 
+### Useful links
+Bluepy doc - https://ianharvey.github.io/bluepy-doc/index.html
+KW40z (BT coprocessor) host-side driver - https://os.mbed.com/teams/Hexiwear/code/Hexi_KW40Z/
+KW40z firmware - https://github.com/MikroElektronika/HEXIWEAR/tree/master/SW/KW40%20IAR/HEXIWEAR_bluetooth
+
