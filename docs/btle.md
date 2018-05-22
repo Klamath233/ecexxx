@@ -31,27 +31,33 @@ import bluepy.btle
 from bluepy.btle import Peripheral
 import time
 
+def try_until_success(func, exception=bluepy.btle.BTLEException, msg='reattempting', args=[]):
+    retry = True
+    while True:
+        try:
+            func(*args)
+            retry = False
+        except exception:
+            print msg
+
+        if not retry:
+            break
+
 BT_MAC = '00:3A:40:0A:00:40'
 CMD_TURN_ON = 'ledonledonledonledon'
 CMD_TURN_OFF = 'ledoffledoffledoffle'
 
 hexi = Peripheral()
-hexi.connect(BT_MAC)
+
+try_until_success(hexi.connect, msg='connect', args=[BT_MAC])
+
 ledctl = hexi.getCharacteristics(uuid='2031')[0] # Alert Input
 
 for i in range(10):
-    ledctl.write(CMD_TURN_ON, True)
-    
-    j = 0
-    while j < 1000000:
-	j = j + 1
-    ledctl.write(CMD_TURN_OFF, True)
-    j = 0
-    while j < 1000000:
-        j = j + 1
-
-
-hexi.disconnect()
+    try_until_success(ledctl.write, msg='turn on', args=[CMD_TURN_ON, True])
+    time.sleep(2)
+    try_until_success(ledctl.write, msg='turn off', args=[CMD_TURN_OFF, True])
+    time.sleep(2)
 ```
 
 ### Another Example on Reading BTLE Characteristics
