@@ -26,7 +26,7 @@ You should replace the MAC address and passkey with your own version. After that
 
 Next, we are ready to run the python script below. Copy'n'paste the code to your Pi and save it to a file. Run the script and you will see the LED blinking. Look at the source code of the python script and also the mbed project (maybe also the source code of the BTLE driver), can you figure out how it makes the LED blink?
 
-```
+```python
 import bluepy.btle
 from bluepy.btle import Peripheral
 import time
