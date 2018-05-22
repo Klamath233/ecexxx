@@ -49,14 +49,14 @@ CMD_TURN_OFF = 'ledoffledoffledoffle'
 
 hexi = Peripheral()
 
-try_until_success(hexi.connect, msg='connect', args=[BT_MAC])
+try_until_success(hexi.connect, msg='error connect', args=[BT_MAC])
 
 ledctl = hexi.getCharacteristics(uuid='2031')[0] # Alert Input
 
 for i in range(10):
-    try_until_success(ledctl.write, msg='turn on', args=[CMD_TURN_ON, True])
+    try_until_success(ledctl.write, msg='error turn on', args=[CMD_TURN_ON, True])
     time.sleep(2)
-    try_until_success(ledctl.write, msg='turn off', args=[CMD_TURN_OFF, True])
+    try_until_success(ledctl.write, msg='error turn off', args=[CMD_TURN_OFF, True])
     time.sleep(2)
 ```
 
